@@ -6,6 +6,7 @@
     "url": "git+https://github.com/quxbaz/polaris-sandbox.git"
   },
   "dependencies": {
+    "@shopify/app-bridge-react": "^1.28.0",
     "@shopify/polaris": "^5.13.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",

@@ -1,9 +1,9 @@
-import '@shopify/polaris/dist/styles.css'
 import React from 'react'
 import {render} from 'react-dom'
-import MyPage from './MyPage'
+// import Page from './MyPage'
+import Page from './ShopifyPage'
 
 render(
-  <MyPage />,
+  <Page />,
   document.getElementById('Main')
 )

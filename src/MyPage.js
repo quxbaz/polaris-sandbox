@@ -7,4 +7,6 @@ const MyPage = () => (
   </div>
 )
 
+MyPage.propTypes = {}
+
 export default MyPage
