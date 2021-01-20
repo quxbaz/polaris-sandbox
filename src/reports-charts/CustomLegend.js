@@ -2,6 +2,7 @@ import styles from './CustomLegend.module.css'
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import colors from './colors'
 
 const LegendItem = ({text, color}) => (
   <span className={styles.LegendItem} style={{background: color}}>
@@ -23,7 +24,15 @@ CustomLegend.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string,
     color: PropTypes.string,
-  })).isRequired,
+  })),
+}
+
+CustomLegend.defaultProps = {
+  items: [
+    {text: 'Sent', color: colors.SENT},
+    {text: 'Pending', color: colors.PENDING},
+    {text: 'Failed', color: colors.FAILED},
+  ]
 }
 
 export default CustomLegend

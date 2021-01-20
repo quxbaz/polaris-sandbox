@@ -6,6 +6,8 @@ import {
 } from 'recharts'
 import colors from './colors'
 import {formatTick} from './util'
+
+//
 import debug from './debug'
 
 const BAR_PROPS = {minPointSize: 6}

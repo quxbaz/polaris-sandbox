@@ -8,15 +8,12 @@ import {
 import colors from './colors'
 import {convertToPieData} from './util'
 import CustomLegend from './CustomLegend'
+
+//
 import debug from './debug'
 
 const COLORS = [colors.SENT, colors.PENDING, colors.FAILED]
 const DATA = convertToPieData(debug.generateNormalReports())
-const LEGEND_ITEMS = [
-  {text: 'Sent', color: colors.SENT},
-  {text: 'Pending', color: colors.PENDING},
-  {text: 'Failed', color: colors.FAILED},
-]
 
 function ReportsPieChart () {
   return (
@@ -30,7 +27,7 @@ function ReportsPieChart () {
             </Pie>
           </PieChart>
         </ResponsiveContainer>
-        <CustomLegend items={LEGEND_ITEMS} style={{marginTop: -12}} />
+        <CustomLegend style={{marginTop: -12}} />
       </Card.Section>
     </Card>
   )
