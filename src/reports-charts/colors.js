@@ -1,5 +1,5 @@
 const colors = {
-  SENT: '#50a9ff',
+  SENT: 'hsl(212deg 100% 60%)',
   PENDING: '#f5b840',
   FAILED: '#f15947',
 }

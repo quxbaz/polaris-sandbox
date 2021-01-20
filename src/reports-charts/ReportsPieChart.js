@@ -25,12 +25,12 @@ function ReportsPieChart () {
         <ResponsiveContainer aspect={1}>
           <PieChart className={styles.PieChart}>
             <Tooltip isAnimationActive={false} />
-            <Pie data={DATA} dataKey="value" nameKey="name" innerRadius="50%" outerRadius="100%">
+            <Pie data={DATA} dataKey="value" nameKey="name" innerRadius="38%" strokeWidth={2} label>
               {DATA.map((entry, i) => <Cell key={`cell-${i}`} fill={COLORS[i]} />)}
             </Pie>
           </PieChart>
         </ResponsiveContainer>
-        <CustomLegend items={LEGEND_ITEMS} />
+        <CustomLegend items={LEGEND_ITEMS} style={{marginTop: -12}} />
       </Card.Section>
     </Card>
   )
