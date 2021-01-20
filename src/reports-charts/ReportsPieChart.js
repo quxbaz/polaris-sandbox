@@ -1,10 +1,7 @@
 import styles from './ReportsPieChart.module.css'
 import React from 'react'
 import {Card} from '@shopify/polaris'
-import {
-  ResponsiveContainer, PieChart,
-  Tooltip, Pie, Cell,
-} from 'recharts'
+import {ResponsiveContainer, PieChart, Tooltip, Pie, Cell} from 'recharts'
 import colors from './colors'
 import {convertToPieData} from './util'
 import CustomLegend from './CustomLegend'
