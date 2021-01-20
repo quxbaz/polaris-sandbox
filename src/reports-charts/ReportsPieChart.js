@@ -27,7 +27,7 @@ function ReportsPieChart () {
             </Pie>
           </PieChart>
         </ResponsiveContainer>
-        <CustomLegend style={{marginTop: -12}} />
+        <CustomLegend style={{marginTop: -20}} />
       </Card.Section>
     </Card>
   )
