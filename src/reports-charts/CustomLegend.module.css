@@ -1,0 +1,17 @@
+.CustomLegend {
+  text-align: center;
+}
+
+.LegendItem {
+  display: inline-block;
+  min-width: 70px;
+  padding: 4px 12px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 32px;
+}
+
+.LegendItem + .LegendItem {
+  margin-left: 8px;
+}

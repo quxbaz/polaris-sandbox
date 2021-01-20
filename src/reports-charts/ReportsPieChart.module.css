@@ -1,7 +1,8 @@
-.PieChart :global(.recharts-default-legend) {
-  outline: 1px solid red;
-  text-align: left;
+.PieChart {
+  margin-bottom: 12px;
 }
+
+.PieChart :global(.recharts-default-legend) {}
 
 .PieChart :global(.recharts-legend-item) {
   margin-left: 10px;
