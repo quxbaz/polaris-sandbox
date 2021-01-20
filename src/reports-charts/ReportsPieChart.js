@@ -19,7 +19,7 @@ function ReportsPieChart () {
   return (
     <Card>
        <Card.Section title="SMS Messages - Overview">
-        <ResponsiveContainer aspect={1}>
+         <ResponsiveContainer aspect={1.6}>
           <PieChart className={styles.PieChart}>
             <Tooltip isAnimationActive={false} />
             <Pie data={DATA} dataKey="value" nameKey="name" strokeWidth={2} label>
@@ -27,7 +27,7 @@ function ReportsPieChart () {
             </Pie>
           </PieChart>
         </ResponsiveContainer>
-        <CustomLegend style={{marginTop: -20}} />
+        <CustomLegend />
       </Card.Section>
     </Card>
   )

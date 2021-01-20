@@ -1,6 +1,4 @@
-.PieChart {
-  margin-bottom: 12px;
-}
+.PieChart {}
 
 .PieChart :global(.recharts-default-legend) {}
 
