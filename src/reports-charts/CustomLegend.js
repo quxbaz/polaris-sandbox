@@ -4,19 +4,21 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import colors from './colors'
 
-const LegendItem = ({text, color}) => (
+const LegendItem = ({children, color}) => (
   <span className={styles.LegendItem} style={{background: color}}>
-    {text}
+    {children}
   </span>
 )
 
 const CustomLegend = ({className, style, items}) => (
   <div className={classNames(styles.CustomLegend, className)} style={style}>
-    {items.map((item, i) => <LegendItem key={i} {...item} />)}
+    {items.map((item, i) => (
+      <LegendItem key={i} {...item}>{item.text}</LegendItem>
+    ))}
   </div>
 )
 
-CustomLegend.LegendItem = LegendItem
+CustomLegend.Item = LegendItem
 
 CustomLegend.propTypes = {
   className: PropTypes.string,

@@ -18,7 +18,7 @@ const DATA = convertToPieData(debug.generateNormalReports())
 function ReportsPieChart () {
   return (
     <Card>
-      <Card.Section title="SMS Messages - Overview">
+       <Card.Section title="SMS Messages - Overview">
         <ResponsiveContainer aspect={1}>
           <PieChart className={styles.PieChart}>
             <Tooltip isAnimationActive={false} />
