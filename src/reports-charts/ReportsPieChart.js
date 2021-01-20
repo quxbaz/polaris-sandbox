@@ -25,7 +25,7 @@ function ReportsPieChart () {
         <ResponsiveContainer aspect={1}>
           <PieChart className={styles.PieChart}>
             <Tooltip isAnimationActive={false} />
-            <Pie data={DATA} dataKey="value" nameKey="name" innerRadius="38%" strokeWidth={2} label>
+            <Pie data={DATA} dataKey="value" nameKey="name" strokeWidth={2} label>
               {DATA.map((entry, i) => <Cell key={`cell-${i}`} fill={COLORS[i]} />)}
             </Pie>
           </PieChart>
