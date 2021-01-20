@@ -1,0 +1,16 @@
+.PieChart :global(.recharts-default-legend) {
+  outline: 1px solid red;
+  text-align: left;
+}
+
+.PieChart :global(.recharts-legend-item) {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.LegendText {
+  position: relative;
+  top: 1px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

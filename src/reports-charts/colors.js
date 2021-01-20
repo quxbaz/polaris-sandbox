@@ -1,7 +1,7 @@
 const colors = {
-  SENT: '#4285f4',
-  PENDING: '#bbbbbb',
-  FAILED: '#ff4444',
+  SENT: '#50a9ff',
+  PENDING: '#f5b840',
+  FAILED: '#f15947',
 }
 
 export default colors
