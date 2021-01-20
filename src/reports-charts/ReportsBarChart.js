@@ -13,8 +13,9 @@ const DATA = debug.generateNormalReports()
 
 function ReportsLineChart () {
   return (
-    <Card title="SMS Message status over time">
-      <br />
+    <Card>
+      <Card.Section title="SMS Messages">
+      </Card.Section>
       <ResponsiveContainer aspect={1.6}>
         <BarChart data={DATA} barGap={0} barCategoryGap="15%" reverseStackOrder={true}>
           <CartesianGrid stroke="hsl(0, 0%, 92%)" />
