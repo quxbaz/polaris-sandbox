@@ -1,14 +1,17 @@
 const colors = {
-  SENT: 'hsl(212deg 100% 60%)',
+  SENT: 'hsl(212, 100%, 60%)',
   PENDING: '#f5b840',
   FAILED: '#f15947',
   GRID_LINE: 'hsl(0, 0%, 92%)',
+  AXIS_LINE: 'hsl(0, 0%, 68%)',
+  TICK_LINE: 'hsl(0, 0%, 68%)',
+  TICK: 'hsl(0, 0%, 60%)',
 }
 
-const COLORS_LIST = [colors.SENT, colors.PENDING, colors.FAILED]
+const MESSAGE_COLORS_LIST = [colors.SENT, colors.PENDING, colors.FAILED]
 
 export {
-  COLORS_LIST,
+  MESSAGE_COLORS_LIST,
 }
 
 export default colors

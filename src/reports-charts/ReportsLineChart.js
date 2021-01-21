@@ -8,7 +8,7 @@ import CustomLegend from './CustomLegend'
 //
 import {generateNormalReports} from './debug'
 
-const LINE_PROPS = {type: 'linear', dot: false, strokeWidth: 1.5}
+const LINE_PROPS = {type: 'monotone', dot: false, strokeWidth: 2.5}
 const DATA = generateNormalReports()
 
 const LabelY = () => (
@@ -19,7 +19,7 @@ function ReportsLineChart () {
   return (
     <Card title="SMS Messages - Trend">
       <Card.Section title="Last 60 days">
-        <ResponsiveContainer aspect={1.6}>
+        <ResponsiveContainer height={240}>
           <LineChart data={DATA} margin={{top: 0, right: 0, bottom: 0, left: 0}}>
             <CartesianGrid stroke='hsl(0, 0%, 92%)' />
             <XAxis dataKey='date' minTickGap={30} tickFormatter={formatTick} />
