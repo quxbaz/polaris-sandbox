@@ -7,10 +7,10 @@ import {convertToPieData} from './util'
 import CustomLegend from './CustomLegend'
 
 //
-import debug from './debug'
+import {generateNormalReports} from './debug'
 
 const COLORS = [colors.SENT, colors.PENDING, colors.FAILED]
-const DATA = convertToPieData(debug.generateNormalReports())
+const DATA = convertToPieData(generateNormalReports())
 
 function ReportsPieChart () {
   return (

@@ -6,10 +6,10 @@ import {formatTick} from './util'
 import CustomLegend from './CustomLegend'
 
 //
-import debug from './debug'
+import {generateNormalReports} from './debug'
 
 const BAR_PROPS = {minPointSize: 6}
-const DATA = debug.generateNormalReports()
+const DATA = generateNormalReports()
 
 function ReportsColumnChart () {
   return (

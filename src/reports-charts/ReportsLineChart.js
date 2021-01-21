@@ -6,10 +6,10 @@ import {formatTick} from './util'
 import CustomLegend from './CustomLegend'
 
 //
-import debug from './debug'
+import {generateNormalReports} from './debug'
 
 const LINE_PROPS = {type: 'linear', dot: false, strokeWidth: 1.5}
-const DATA = debug.generateNormalReports()
+const DATA = generateNormalReports()
 
 const LabelY = () => (
   <span>foobar</span>

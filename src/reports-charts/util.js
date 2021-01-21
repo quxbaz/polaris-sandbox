@@ -1,3 +1,8 @@
+function capitalize (s) {
+  return s[0].toUpperCase() + s.slice(1)
+}
+
+
 /*
  * Takes a date of the example format:
  *   2021-1-20
@@ -38,13 +43,19 @@ function convertToPieData (reports) {
     failed += report.quantity_failed
   })
   return [
-    {name: 'sent', value: sent},
+    {name: 'sent',    value: sent},
     {name: 'pending', value: pending},
-    {name: 'failed', value: failed},
+    {name: 'failed',  value: failed},
   ]
 }
 
+function convertToBarData (reports) {
+  return convertToPieData(reports)
+}
+
 export {
+  capitalize,
   formatTick,
   convertToPieData,
+  convertToBarData,
 }

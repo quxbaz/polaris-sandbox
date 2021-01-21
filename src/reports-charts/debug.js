@@ -82,7 +82,7 @@ function generateFailingReports (days=61) {
   return reports
 }
 
-export default {
+export {
   generateNormalReports,
   generateTrendingUpReports,
   generateTrendingDownReports,

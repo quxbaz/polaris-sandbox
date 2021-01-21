@@ -1,38 +1,41 @@
 import React from 'react'
 import {Card} from '@shopify/polaris'
-import {ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar} from 'recharts'
-import colors from './colors'
+import {ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar, Cell} from 'recharts'
+import colors, {COLORS_LIST} from './colors'
+import {capitalize, convertToBarData} from './util'
 import CustomLegend from './CustomLegend'
 
 //
-import debug from './debug'
+import {generateNormalReports} from './debug'
 
-// const DATA = debug.generateNormalReports()
+const DATA = convertToBarData(generateNormalReports())
 
-const DATA = [
-  {"name": "sent",    "value": 32},
-  {"name": "pending", "value": 4},
-  {"name": "failed",  "value": 2},
-]
-
-const BarLabel = () => (
-  <div>foobar</div>
-)
+// const BarLabel = ({index, x, y, width, height, value}) => {
+//   return (
+//     <text x={x} y={y} fontSize="16" fill='#000' textAnchor="inside" fontWeight="bold">
+//       {value}
+//     </text>
+//   )
+// }
 
 function ReportsBarChart () {
   return (
-    <Card title="SMS Messages - Recent">
-      <Card.Section title="Last 14 days">
+    <Card title="SMS Messages - Overview">
+      <Card.Section title="Last 7 days">
         <ResponsiveContainer aspect={1.6}>
           <BarChart data={DATA} layout="vertical">
-            <CartesianGrid stroke="hsl(0, 0%, 92%)" />
-            <XAxis type="number" />
-            <YAxis type="category" />
-            <Tooltip isAnimationActive={false} cursor={{fill: "hsl(44 81% 62% / 0.3)"}} />
-            <Bar dataKey="value" label={BarLabel} />
+            <CartesianGrid horizontal={false} stroke={colors.GRID_LINE} />
+            <XAxis type="number" datakey="value" />
+            <YAxis type="category" dataKey="name" hide />
+            <Tooltip isAnimationActive={false} cursor={{fill: "hsl(0deg 0% 92%)"}}
+                     formatter={(value, name) => [value, 'Quantity']}
+                     labelFormatter={(label) => capitalize(label) + ' messages'}/>
+            <Bar dataKey="value">
+              {DATA.map((entry, index) => <Cell key={index} fill={COLORS_LIST[index]} />)}
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
-        <CustomLegend align="left" />
+        <CustomLegend />
       </Card.Section>
     </Card>
   )
