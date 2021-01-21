@@ -6,11 +6,23 @@ import {
 import ReportsPieChart from './reports-charts/ReportsPieChart'
 import ReportsLineChart from './reports-charts/ReportsLineChart'
 import ReportsBarChart from './reports-charts/ReportsBarChart'
+import ReportsColumnChart from './reports-charts/ReportsColumnChart'
 
 function ShopifyPage () {
   return (
     <AppProvider>
       <Page fullWidth title="Dashboard">
+
+        <Layout>
+          <Layout.Section secondary>
+            <ReportsBarChart />
+          </Layout.Section>
+          <Layout.Section>
+            <ReportsLineChart />
+          </Layout.Section>
+        </Layout>
+
+        <br />
 
         <Layout>
           <Layout.Section oneThird>
@@ -20,7 +32,7 @@ function ShopifyPage () {
             <ReportsLineChart />
           </Layout.Section>
           <Layout.Section oneThird>
-            <ReportsBarChart />
+            <ReportsColumnChart />
           </Layout.Section>
         </Layout>
 

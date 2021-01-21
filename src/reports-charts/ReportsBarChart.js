@@ -2,34 +2,40 @@ import React from 'react'
 import {Card} from '@shopify/polaris'
 import {ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar} from 'recharts'
 import colors from './colors'
-import {formatTick} from './util'
 import CustomLegend from './CustomLegend'
 
 //
 import debug from './debug'
 
-const BAR_PROPS = {minPointSize: 6}
-const DATA = debug.generateNormalReports()
+// const DATA = debug.generateNormalReports()
 
-function ReportsLineChart () {
+const DATA = [
+  {"name": "sent",    "value": 32},
+  {"name": "pending", "value": 4},
+  {"name": "failed",  "value": 2},
+]
+
+const BarLabel = () => (
+  <div>foobar</div>
+)
+
+function ReportsBarChart () {
   return (
     <Card title="SMS Messages - Recent">
       <Card.Section title="Last 14 days">
         <ResponsiveContainer aspect={1.6}>
-          <BarChart data={DATA} barGap={0} barCategoryGap="15%" reverseStackOrder={true}>
+          <BarChart data={DATA} layout="vertical">
             <CartesianGrid stroke="hsl(0, 0%, 92%)" />
-            <XAxis dataKey="date" tickLine={false} tickFormatter={formatTick} />
-            <YAxis />
+            <XAxis type="number" />
+            <YAxis type="category" />
             <Tooltip isAnimationActive={false} cursor={{fill: "hsl(44 81% 62% / 0.3)"}} />
-            <Bar {...BAR_PROPS} name="Sent"    dataKey="quantity_sent" fill={colors.SENT} />
-            <Bar {...BAR_PROPS} name="Pending" dataKey="quantity_pending" fill={colors.PENDING} />
-            <Bar {...BAR_PROPS} name="Failed"  dataKey="quantity_failed" fill={colors.FAILED} />
+            <Bar dataKey="value" label={BarLabel} />
           </BarChart>
         </ResponsiveContainer>
-        <CustomLegend />
+        <CustomLegend align="left" />
       </Card.Section>
     </Card>
   )
 }
 
-export default ReportsLineChart
+export default ReportsBarChart
