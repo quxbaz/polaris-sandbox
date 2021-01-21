@@ -12,7 +12,7 @@ const DATA = convertToBarData(generateNormalReports())
 
 // const BarLabel = ({index, x, y, width, height, value}) => {
 //   return (
-//     <text x={x} y={y} fontSize="16" fill='#000' textAnchor="inside" fontWeight="bold">
+//     <text x={x} y={y - 4} fill='#000' textAnchor="inside">
 //       {value}
 //     </text>
 //   )
@@ -23,16 +23,17 @@ function ReportsBarChart () {
     <Card title="SMS Messages - Overview">
       <Card.Section title="Last 7 days">
         <ResponsiveContainer aspect={1.6}>
-          <BarChart data={DATA} layout="vertical">
+          <BarChart data={DATA} layout="vertical" barSize={40}>
+            <Tooltip isAnimationActive={false} cursor={{fill: "hsl(0deg 0% 92%)"}}
+                     formatter={(value, name) => [value, "Quantity"]}
+                     labelFormatter={(label) => capitalize(label) + " messages"} />
             <CartesianGrid horizontal={false} stroke={colors.GRID_LINE} />
             <XAxis type="number" datakey="value" />
-            <YAxis type="category" dataKey="name" hide />
-            <Tooltip isAnimationActive={false} cursor={{fill: "hsl(0deg 0% 92%)"}}
-                     formatter={(value, name) => [value, 'Quantity']}
-                     labelFormatter={(label) => capitalize(label) + ' messages'}/>
             <Bar dataKey="value">
               {DATA.map((entry, index) => <Cell key={index} fill={COLORS_LIST[index]} />)}
             </Bar>
+            <YAxis type="category" dataKey="name" mirror tickLine={false}
+                   tickFormatter={capitalize} hide />
           </BarChart>
         </ResponsiveContainer>
         <CustomLegend />
