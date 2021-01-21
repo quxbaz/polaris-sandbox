@@ -10,13 +10,17 @@ const LegendItem = ({children, color}) => (
   </span>
 )
 
-const CustomLegend = ({className, style, items}) => (
-  <div className={classNames(styles.CustomLegend, className)} style={style}>
-    {items.map((item, i) => (
-      <LegendItem key={i} {...item}>{item.text}</LegendItem>
-    ))}
-  </div>
-)
+const CustomLegend = ({className, style, items, align}) => {
+  if (align != null)
+    style = {...style, textAlign: align}
+  return (
+    <div className={classNames(styles.CustomLegend, className)} style={style}>
+     {items.map((item, i) => (
+       <LegendItem key={i} {...item}>{item.text}</LegendItem>
+     ))}
+   </div>
+  )
+}
 
 CustomLegend.Item = LegendItem
 
@@ -27,6 +31,7 @@ CustomLegend.propTypes = {
     text: PropTypes.string,
     color: PropTypes.string,
   })),
+  align: PropTypes.oneOf(['left', 'right', 'center']),
 }
 
 CustomLegend.defaultProps = {
@@ -34,7 +39,7 @@ CustomLegend.defaultProps = {
     {text: 'Sent', color: colors.SENT},
     {text: 'Pending', color: colors.PENDING},
     {text: 'Failed', color: colors.FAILED},
-  ]
+  ],
 }
 
 export default CustomLegend
