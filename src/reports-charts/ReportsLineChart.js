@@ -11,17 +11,19 @@ import debug from './debug'
 const LINE_PROPS = {type: 'linear', dot: false, strokeWidth: 1.5}
 const DATA = debug.generateNormalReports()
 
+const LabelY = () => (
+  <span>foobar</span>
+)
+
 function ReportsLineChart () {
   return (
     <Card title="SMS Messages - Trend">
       <Card.Section title="Last 60 days">
         <ResponsiveContainer aspect={1.6}>
-          <LineChart data={DATA} margin={{top: 0, right: 45, left: 0, bottom: 0}}>
+          <LineChart data={DATA} margin={{top: 0, right: 0, bottom: 0, left: 0}}>
             <CartesianGrid stroke='hsl(0, 0%, 92%)' />
             <XAxis dataKey='date' minTickGap={30} tickFormatter={formatTick} />
-            <YAxis tickLine={false}>
-              <Label angle={-90} value='Messages' position='insideLeft' style={{textAnchor: 'middle'}} />
-            </YAxis>
+            <YAxis mirror label={LabelY} />
             <Tooltip isAnimationActive={false} />
             <Line {...LINE_PROPS} name='Sent'    dataKey='quantity_sent'    stroke={colors.SENT} />
             <Line {...LINE_PROPS} name='Pending' dataKey='quantity_pending' stroke={colors.PENDING} />
