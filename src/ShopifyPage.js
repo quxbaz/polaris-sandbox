@@ -24,17 +24,19 @@ function ShopifyPage () {
 
         <br />
 
-        <Layout>
-          <Layout.Section oneThird>
-            <ReportsPieChart />
-          </Layout.Section>
-          <Layout.Section oneThird>
-            <ReportsLineChart />
-          </Layout.Section>
-          <Layout.Section oneThird>
-            <ReportsColumnChart />
-          </Layout.Section>
-        </Layout>
+        {/*
+           <Layout>
+            <Layout.Section oneThird>
+              <ReportsPieChart />
+            </Layout.Section>
+            <Layout.Section oneThird>
+              <ReportsLineChart />
+            </Layout.Section>
+            <Layout.Section oneThird>
+              <ReportsColumnChart />
+            </Layout.Section>
+          </Layout>
+        */}
 
         <Layout.AnnotatedSection title="SMS Message" description="The message that will be delivered to customer when inventory comes back in stock.">
           <Card sectioned>
