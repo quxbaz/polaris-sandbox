@@ -2,7 +2,7 @@ import React from 'react'
 import {Card} from '@shopify/polaris'
 import {ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Line} from 'recharts'
 import colors from './colors'
-import {formatTick} from './util'
+import {formatDate, formatTick} from './util'
 import CustomLegend from './CustomLegend'
 
 //
@@ -22,7 +22,7 @@ function ReportsLineChart () {
                    axisLine={{stroke: colors.AXIS_LINE, strokeWidth: 1}}
                    tick={{fill: colors.TICK}} tickSize={12} tickMargin={4}
                    tickLine={{stroke: colors.TICK_LINE}} minTickGap={30} tickFormatter={formatTick} />
-            <Tooltip isAnimationActive={false} />
+            <Tooltip isAnimationActive={false} labelFormatter={formatDate} />
             <Line {...LINE_PROPS} name="Sent"    dataKey="quantity_sent"    stroke={colors.SENT} />
             <Line {...LINE_PROPS} name="Pending" dataKey="quantity_pending" stroke={colors.PENDING} />
             <Line {...LINE_PROPS} name="Failed"  dataKey="quantity_failed"  stroke={colors.FAILED} />

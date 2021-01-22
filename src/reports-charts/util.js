@@ -2,6 +2,20 @@ function capitalize (s) {
   return s[0].toUpperCase() + s.slice(1)
 }
 
+/*
+ * Takes a date of the example format:
+ *   2021-1-20
+ *
+ * And returns a string:
+ *   1/20/2021
+ *
+ * @date {string}
+ * @return {string}
+ */
+function formatDate (date) {
+  const parts = date.split('-')
+  return `${parts[1]}/${parts[2]}/${parts[0]}`
+}
 
 /*
  * Takes a date of the example format:
@@ -55,6 +69,7 @@ function convertToBarData (reports) {
 
 export {
   capitalize,
+  formatDate,
   formatTick,
   convertToPieData,
   convertToBarData,
