@@ -15,7 +15,7 @@ const DATA = generateNormalReports()
 function ReportsLineChart () {
   return (
     <Card>
-      <Card.Section title="SMS Trend - Last 60 days">
+      <Card.Section title="SMS Messages Sent in the Last 60 Days">
         <ResponsiveContainer className={chartStyles.Container} height={240}>
           <LineChart data={DATA} margin={{left: -30, right: 0}}>
             <CartesianGrid stroke={colors.GRID_LINE} />

@@ -22,7 +22,7 @@ const DATA = convertToBarData(generateNormalReports())
 function ReportsBarChart () {
   return (
     <Card>
-      <Card.Section title="SMS Overview - Last 60 days">
+      <Card.Section title="SMS Messages sent in the last 7 days">
         <ResponsiveContainer className={chartStyles.Container} height={240} >
           <BarChart data={DATA} layout="vertical" barSize={40} margin={{left: 0, right: 0}}>
             <Tooltip isAnimationActive={false} cursor={{fill: "hsl(0deg 0% 60% / 10%)"}}
