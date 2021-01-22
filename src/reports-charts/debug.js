@@ -1,5 +1,5 @@
 /*
- * dev-debug.js
+ * debug.js
  *
  * Contains methods useful for debugging and testing in development. Not to be
  * used in production code.
