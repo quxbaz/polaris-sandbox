@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card} from '@shopify/polaris'
-import {ResponsiveContainer, LineChart, CartesianGrid, CartesianAxis, XAxis, YAxis, Tooltip, Line, Label} from 'recharts'
+import {ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Tooltip, Line} from 'recharts'
 import colors from './colors'
 import {formatTick} from './util'
 import CustomLegend from './CustomLegend'
