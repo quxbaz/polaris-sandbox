@@ -1,3 +1,4 @@
+import chartStyles from './chart-styles.module.css'
 import React from 'react'
 import {Card} from '@shopify/polaris'
 import {ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar, Cell} from 'recharts'
@@ -22,15 +23,15 @@ function ReportsBarChart () {
   return (
     <Card title="SMS Messages - Overview">
       <Card.Section title="Last 7 days">
-        <ResponsiveContainer height={240}>
-          <BarChart data={DATA} layout="vertical" barSize={40}>
+        <ResponsiveContainer className={chartStyles.Container} height={240} >
+          <BarChart data={DATA} layout="vertical" barSize={40} margin={{left: 0, right: 0}}>
             <Tooltip isAnimationActive={false} cursor={{fill: "hsl(0deg 0% 60% / 10%)"}}
                      formatter={(value, name) => [value, "Quantity"]}
                      labelFormatter={(label) => capitalize(label) + " messages"} />
             <CartesianGrid horizontalPoints={[0]} stroke={colors.GRID_LINE} />
             <XAxis type="number" dataKey="value"
                    axisLine={{stroke: colors.AXIS_LINE, strokeWidth: 1}}
-                   tick={{fill: colors.TICK}} tickSize={12} tickMargin={4}
+                   tick={{fontSize: 12, fill: colors.TICK}} tickSize={12} tickMargin={4}
                    tickLine={{stroke: colors.TICK_LINE}} />
             <Bar dataKey="value">
               {DATA.map((entry, index) => <Cell key={index} fill={MESSAGE_COLORS_LIST[index]} />)}
@@ -39,7 +40,7 @@ function ReportsBarChart () {
                    tickFormatter={capitalize} hide />
           </BarChart>
         </ResponsiveContainer>
-        <CustomLegend />
+        <CustomLegend align="right" />
       </Card.Section>
     </Card>
   )
