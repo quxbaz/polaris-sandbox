@@ -22,7 +22,10 @@ function ReportsLineChart () {
         <ResponsiveContainer height={240}>
           <LineChart data={DATA} margin={{top: 0, right: 0, bottom: 0, left: 0}}>
             <CartesianGrid stroke='hsl(0, 0%, 92%)' />
-            <XAxis dataKey='date' minTickGap={30} tickFormatter={formatTick} />
+            <XAxis dataKey="date"
+                   axisLine={{stroke: colors.AXIS_LINE, strokeWidth: 1}}
+                   tick={{fill: colors.TICK}} tickSize={12} tickMargin={4}
+                   tickLine={{stroke: colors.TICK_LINE}} minTickGap={30} tickFormatter={formatTick} />
             <YAxis mirror label={LabelY} />
             <Tooltip isAnimationActive={false} />
             <Line {...LINE_PROPS} name='Sent'    dataKey='quantity_sent'    stroke={colors.SENT} />
