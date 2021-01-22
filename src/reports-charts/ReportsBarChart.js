@@ -27,7 +27,7 @@ function ReportsBarChart () {
             <Tooltip isAnimationActive={false} cursor={{fill: "hsl(0deg 0% 60% / 10%)"}}
                      formatter={(value, name) => [value, "Quantity"]}
                      labelFormatter={(label) => capitalize(label) + " messages"} />
-            <CartesianGrid horizontal={false} stroke={colors.GRID_LINE} />
+            <CartesianGrid horizontalPoints={[0]} stroke={colors.GRID_LINE} />
             <XAxis type="number" dataKey="value"
                    axisLine={{stroke: colors.AXIS_LINE, strokeWidth: 1}}
                    tick={{fill: colors.TICK}} tickSize={12} tickMargin={4}
