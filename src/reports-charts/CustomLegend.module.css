@@ -1,6 +1,7 @@
 .CustomLegend {
   margin: 22px 0 4px;
   text-align: center;
+  opacity: 0.3;
 }
 
 .LegendItem {

@@ -1,3 +1,8 @@
+.TopContainer {
+  position: relative;
+}
+
 .Container {
   margin-top: 18px;
+  opacity: 0.3;
 }
